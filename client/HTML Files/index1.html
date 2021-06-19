@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Fruits & Vegetables</title>
+    <link rel="icon" type="image/png" href="../Images/favicon2.png" />
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <!-- CSS  -->
+    <link rel="stylesheet" href="../CSS Files/style.css"/>
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500;800&display=swap" rel="stylesheet">
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/c5a42aa6b7.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- Loader and alert Messages -->
+    <div class="loader"></div>
+    <div class="alert alert-dismissible col-md-3 float-right" id="alertMsg">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+       <span></span> 
+      </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <div class="styleLogo"> Fruits & Vegetables</div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span>
+                    <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link"><b id="loggedinuser"></b></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="adminBtn" href="../HTML Files/index.html">Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="loginBtn" type="button" class="nav-link" data-toggle="popover">Login/Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="passBtn" type="button" class="nav-link d-none" data-toggle="popover">Change password</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-none" type="button" id="logout">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+    <!-- Page Content -->
+
+    <!-- Slideshow Images -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="carouselExampleCaptions" class="carousel slide my-4" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Images/slider1.jpg" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Organic Products Delivered To Your Door</h5>
+                                <p>Farm products like unique hand-crafted jams, pasture-raised eggs, dairy, artisan
+                                    olive oil, and more....</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/slider2.jpg" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Check out our newest fruits recipes</h5>
+                                <p>Don't miss out our 8 new healthy freshest recipes!</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Images/slider3.jpg" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Freshness is key</h5>
+                                <p>We receive deliveries into our warehouse every night of the week direct from our
+                                    farms!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End SlideShow IMages -->
+
+    <!-- Sorting and filtering bar -->
+    <div class="row mx-0 bg-color3 mb-4 py-2 align-items-center sticky-top" id="filter_bar">
+        <div class="d-xs-none d-sm-none d-md-block col"></div>
+        <div class="col-xs col-sm-9 col-md-3 col-lg-3">
+            <div class="input-group">
+                <div class="d-xs-none input-group-prepend">
+                    <label class="input-group-text" for="sortingFilter">Sorting</label>
+                </div>
+                <select class="custom-select" id="sortingFilter">
+                    <option value="-createdOn" selected>Newest</option>
+                    <option value="createdOn">Oldest</option>
+                    <option value="name">A-Z</option>
+                    <option value="-name">Z-A</option>
+                    <option value="price">Price: Low-High</option>
+                    <option value="-price">Price: High-Low</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-xs col-sm-9 col-md-3 col-lg-3">
+            <div class="input-group">
+                <input type="text" class="form-control" aria-label="Text input" id="searchInput">
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-outline-secondary">Search</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs col-sm-9 col-md-3 col-lg-3">
+            <div class="input-group">
+                <div class="d-xs-none input-group-prepend">
+                    <label class="input-group-text" for="categoryFilter">Categories</label>
+                </div>
+                <select class="custom-select" id="categoryFilter">
+                    <option value="all" selected>All categories</option>
+                    <option value="Fruits">Fruits</option>
+                    <option value="Greens">Greens</option>
+                    <option value="Vegetables">Vegetables</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-cart col-sm-3 col-md-2 col-lg-1">
+            <button type="button" class="btn btn-demo btn-info bg-color4" data-toggle="modal" data-target="#cartModal"
+                id="cart-modal">
+                <svg class="bi bi-cart3" width="2.2em" height="2.2em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                </svg>
+                <span class="badge badge-dark d-none bg-color3" id="itemsCartNum">0</span>
+            </button>
+        </div>
+        <div class="col"></div>
+    </div>
+    <!-- End Sorting and filtering bar -->
+
+    <!-- Products list -->
+    <div class="container-fluid" id="products_div">
+        <div class="row mx-0">
+            <div class="col"></div>
+            <div class="col-9 row" id="products_list">
+    
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+     <!-- End Products list -->
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-primary" id="footer">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright © Fruits and Vegetables 2021</p>
+        </div>
+    </footer> 
+    <!-- End Footer -->
+
+    <!-- Modals Section -->
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="login_modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Sign in</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" id="login_page">
+                        <form id="login_form" class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <div class="form-group col-md-12" style="position:center">
+                                    <label for="username">User Name</label>
+                                    <input type="text" class="form-control" id="username"
+                                        placeholder="Username or Email" required>
+                                    <div class="invalid-feedback">Invalid Password Username/Email</div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password"
+                                        required>
+                                    <div class="invalid-feedback">Invalid Password</div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary" id="submitLoginForm">Sign in</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="#" id="ForgBtn" type="button" data-toggle="popover">Forgot Password</a>
+                                <a href="#" id="profileBtn" type="button" data-toggle="popover">Create an account</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Login Modal -->
+
+    <!--  SignUp Modal  -->
+    <div class="modal fade" id="Profile_modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Sign up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" id="registration_page">
+                        <form id="registration_form" class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="f_name">First Name</label>
+                                    <input type="text" class="form-control" id="f_name" placeholder="First Name" required>
+                                    <div class="invalid-feedback">Please Enter First Name</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="l_name">Last Name</label>
+                                    <input type="text" class="form-control" id="l_name" placeholder="Last Name"
+                                        required>
+                                        <div class="invalid-feedback">Please Enter Last Name</div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email"
+                                        required>
+                                    <div class="invalid-feedback">
+                                       <span id="remail">Please Enter email</span>
+                                       <span id="iemail">Email Id is already in use</span>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="uname">Username</label>
+                                    <input type="text" class="form-control" id="uname" placeholder="Username" required>
+                                    <div class="invalid-feedback">
+                                        <span id="runame">Please Enter Username</span>
+                                        <span id="iuname">Username is already in use</span>
+                                     </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="number" class="form-control" id="phone" placeholder="Phone Number"
+                                        required>
+                                    <div class="invalid-feedback">Please Enter Phone Number</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="pwd">Password</label>
+                                    <input type="password" class="form-control" id="pwd"
+                                        placeholder="Password" required>
+                                        <div class="invalid-feedback">Please Enter Password</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="cpwd">Confirm Password</label>
+                                    <input type="password" class="form-control" id="cpwd"
+                                        placeholder="Confirm Password" required>
+                                        <div class="invalid-feedback">
+                                            <span id="rcpwd">Please Enter Confirm Password</span>
+                                            <span id="icpwd">Please insert a matching password</span>
+                                        </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="address">Address</label>
+                                    <textarea type="text" class="form-control" id="address"
+                                        placeholder="1234 Main St" required></textarea>
+                                        <div class="invalid-feedback">Please Enter Address</div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary" id="submitRegistrationForm">Sign Up</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End SignUp Modal -->
+    
+    <!--  Forgot Password Modal   -->
+    <div class="modal fade" id="Forg_modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Forgot Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" id="forget_pw_page">
+                        <form id="forget_pw_form" class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="fp_email">Email</label>
+                                    <input type="email" class="form-control" id="fp_email"
+                                        placeholder="Enter Registered Email" required>
+                                    <div class="invalid-feedback">Please insert a valid email.</div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary" id="fpwsubmitbtn">Submit</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Forgot Password Modal -->
+
+    <!--  Change Password Modal -->
+    <div class="modal fade" id="Pass_modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Change Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" id="change_pw_page">
+                        <form id="change_pw_form" class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="oldPW">Old Password</label>
+                                    <input type="password" class="form-control" id="oldPW" placeholder="Old Password"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        <span id="ropw">Please Enter Old Password</span>
+                                        <span id="iopw">Invalid Old Password</span>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="newPw">New Password</label>
+                                    <input type="password" class="form-control" id="newPW" placeholder="New Password"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        <span id="rnpw">Please Enter New Password</span>
+                                        <span id="inpw">New Password should be different</span>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="cNewPW">Confirm New Password</label>
+                                    <input type="password" class="form-control" id="cNewPW"
+                                        placeholder="Confirm New Password" required>
+                                    <div class="invalid-feedback">
+                                        <span id="rcpw">Please Enter Confirm Password</span>
+                                        <span id="icpw">Please insert a matching password</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary" id="changepwbtn">Change Password</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Change Password Modal -->
+
+    <!-- Product Details Modal -->
+    <div class="modal fade" id="product_details" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header" id="product_details_header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-5">
+                            <img src="" class="img-fluid" id="detailsMainImg">
+                        </div>
+                        <div class="col">
+                            <p class="font-weight-normal h2" id="details_title"></p>
+                            <p class="font-weight-lighter" id="details_description"></p>
+                            <p class="font-weight-bold display-4" id="details_price"></p>
+                            <div class="mb-4">
+                                <svg class="bi bi-caret-left-fill change-qnt" id="restProduct" width="2em" height="2em"
+                                    viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                                </svg>
+                                <span class="h5" id="productQnt">1</span><span class="h5"> </span>
+                                <svg class="bi bi-caret-right-fill change-qnt" id="addProduct" width="2em" height="2em"
+                                    viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="addCartBtn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- End Product Details Modal -->
+
+    <!-- Thank you for your order modal -->
+    <div class="modal fade" id="summary_finish" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="staticBackdropLabel">Thank you for your order!</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row px-4 align-items-center" id="summary_page">
+                        <div class="col-lg-7 border rounded">
+                            <h4 class="my-3">Your Order <i class="fas fa-shopping-bag"></i></h4>
+                            <div class="row" id="summary_products"></div>
+                        </div>
+                        <div class="col ml-lg-4 mt-3 mt-lg-0 border py-4 rounded">
+                            <h4>Payment Details <i class="far fa-credit-card"></i></h4>
+                            <hr>
+                            <h6>Subtotal:<span id="summary_subtotal" class="float-right"></span></h6>
+                            <h6>Shipping Price:<span id="summary_shipping" class="float-right">0.00&#163;</span></h6>
+                            <hr>
+                            <h6>Total:<span id="summary_total" class="float-right"></span></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- End Thank you for your order modal -->
+
+    <!-- Modal Cart-Open  -->
+    <div class="modal right fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel2">
+                        Cart
+                        <svg class="bi bi-cart4" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="#FCB831"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span> 
+                    </button>
+                </div>
+                <div class="modal-body" id="cart-content"></div>
+                <div class="row">
+                    <div class="col-7 mx-3">
+                        <span class="font-weight-bold">Shipping</span>
+                    </div>
+                    <div class="col-3">
+                        <span id="cart-shipping" class="font-weight-bold float-right">0.00 &#163;</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-7 mx-3">
+                        <span class="font-weight-bold">Estimated total</span>
+                    </div>
+                    <div class="col-3">
+                        <span id="cart-total" class="font-weight-bold float-right">0.00 &#163;</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-11 m-3">
+                        <button id="checkoutBtn" type="button" class="btn btn-success btn-lg btn-block" data-placement="top"
+                            data-toggle="popover" title="Ooooops!!!"
+                            data-content="Your cart is empty. Let's buy something!">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal Cart-Open  -->
+
+    <!-- JAVASCRIPT File for user page -->
+    <script src="../JavaScript Files/script.js"></script>
+    <!-- JQUERY  -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <!-- BOOTSTRAP  -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,432 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "$2a$08$FMmAkbirdRC2h7PN3OS9xeCt301H76ABMbYUIgg1ggm/0mCH5ujDi",
+      "role": "admin",
+      "isActive": true,
+      "isVerified": true,
+      "createdOn": "2021-03-13T15:54:52.041Z",
+      "id": "7b24ca59-0b90-461f-b424-0c8247367a49"
+    },
+    {
+      "first_name": "Emad",
+      "last_name": "Al Refaee",
+      "email": "emadalrefaee@gmail.com",
+      "username": "emad",
+      "phone": "07432416009",
+      "password": "$2a$08$5Nb8DuKRaTjlUXYjyvZXyuPHzdFeCNo57I8FhXZm6yjx3Cxyn6Itq",
+      "address": "DH1 1SW",
+      "role": "user",
+      "isActive": true,
+      "isVerified": true,
+      "createdOn": "2021-04-05T18:09:48.698Z",
+      "id": "601c2a60-37e0-46c2-b02b-2f40df092fbc"
+    },
+    {
+      "f_name": "Mohammad",
+      "l_name": "Al Refaee",
+      "email": "mohammadalrefaee60@gmail.com",
+      "username": "Mohammad12",
+      "phone": 505477004,
+      "password": "$2a$08$Ur.9zwktRkQv7Pv//PfZ4eLhJFes4aFLK0hrdSyM0L4Tb/j8FE3Ri",
+      "address": "JBR",
+      "role": "user",
+      "isActive": true,
+      "isVerified": true,
+      "createdOn": "2021-04-09T14:16:07.045Z",
+      "id": "f74728de-d41e-4f13-9b24-7e2a758eb303"
+    },
+    {
+      "first_name": "Manohar",
+      "last_name": "V",
+      "email": "manoharchoudaryv@gmail.com",
+      "username": "manohar",
+      "phone": "9492901901",
+      "password": "$2a$08$eAaVNf6osPKoMobTNbKcMO8AGZ8cPj9tPeLG7xwSGYA3ZuwA9J/HW",
+      "address": "sdgdsgsdg",
+      "role": "user",
+      "isActive": true,
+      "isVerified": false,
+      "randomCode": "c1a9239b02fd6a75f49a1cabfbe304dc5ff4d98f646b9fc98646fd755df4bb08df9b2b9a674e4332723d4ec676762a7c7bf6648f1ba0e81331eb16ba60d08716",
+      "createdOn": "2021-06-09T14:29:20.429Z",
+      "id": "b009bff1-15bb-407c-adaa-b590c1f59283"
+    }
+  ],
+  "carts": [
+    {
+      "productId": "5ccec0a5-5f66-4e7e-b7d9-a83f5e6b99ea",
+      "quantity": 3,
+      "userId": "7b24ca59-0b90-461f-b424-0c8247367a49",
+      "createdOn": "2021-04-10T20:56:53.991Z",
+      "id": "dff21b23-eab3-4e8e-8480-d9ff1e61f72a"
+    },
+    {
+      "productId": "c0f88e83-b57c-4136-bfcd-1e7a2a25ed87",
+      "userId": "b009bff1-15bb-407c-adaa-b590c1f59283",
+      "createdOn": "2021-06-09T14:33:39.338Z",
+      "quantity": 1,
+      "id": "bec500d6-fa1e-49da-96ab-9f79d1ca47a8"
+    }
+  ],
+  "orders": [
+    {
+      "orderID": "1617810503984b424",
+      "orderTotal": 7,
+      "status": "cancelled",
+      "userId": "7b24ca59-0b90-461f-b424-0c8247367a49",
+      "createdOn": "2021-04-07T15:48:23.985Z",
+      "products": [
+        {
+          "name": "Cucumber",
+          "price": 1.25,
+          "quantity": 4,
+          "id": "a18dd015-fd8b-4c9c-82ce-56eb8343e6ca",
+          "units": "1 kg",
+          "image": "cucumber.png"
+        },
+        {
+          "name": "Big Eggplant",
+          "price": 2,
+          "quantity": 1,
+          "id": "fcc9bb9e-8f3d-48a0-979d-53f35e425d2e",
+          "units": "1 kg",
+          "image": "big_eggplant.png"
+        }
+      ],
+      "id": "15d121b9-2b8f-453d-97eb-11405a9f4302",
+      "customer_name": "undefined undefined",
+      "acceptedOn": "2021-04-07T15:48:45.417Z",
+      "dispatchedOn": "2021-04-07T15:48:47.663Z",
+      "cancelledOn": "2021-04-07T15:48:51.567Z"
+    },
+    {
+      "orderID": "16179833839079b24",
+      "orderTotal": 60,
+      "status": "delivered",
+      "userId": "f74728de-d41e-4f13-9b24-7e2a758eb303",
+      "createdOn": "2021-04-09T15:49:43.908Z",
+      "products": [
+        {
+          "name": "Mango",
+          "price": 5,
+          "quantity": 2,
+          "id": "87154922-48af-4941-a59b-4f32ca409223",
+          "units": "1 kg",
+          "image": "mango.png"
+        },
+        {
+          "name": "Pitaya",
+          "price": 5,
+          "quantity": 4,
+          "id": "b10f5aee-15ed-4e1e-9f2d-4d60fb6b314e",
+          "units": "1 pcs",
+          "image": "pitaya.png"
+        },
+        {
+          "name": "Banana",
+          "price": 10,
+          "quantity": 3,
+          "id": "720a64c8-a5c5-4038-9854-68ca88992093",
+          "units": "1 kg",
+          "image": "banana.png"
+        }
+      ],
+      "id": "d5989672-5866-40c9-a756-b10ba4941159",
+      "address": "JBR",
+      "customer_name": "undefined undefined",
+      "acceptedOn": "2021-04-09T16:10:11.346Z",
+      "dispatchedOn": "2021-04-09T16:11:06.875Z",
+      "deliveredOn": "2021-04-09T16:12:38.103Z"
+    },
+    {
+      "orderID": "16180883327759b24",
+      "orderTotal": 9,
+      "status": "cancelled",
+      "userId": "f74728de-d41e-4f13-9b24-7e2a758eb303",
+      "createdOn": "2021-04-10T20:58:52.775Z",
+      "products": [
+        {
+          "name": "Parsley",
+          "price": 1,
+          "quantity": 4,
+          "id": "5ac4a727-3657-4f0e-a83c-d46f06874e5c",
+          "units": "1 bunch",
+          "image": "parsley.png"
+        },
+        {
+          "name": "Green Kiwi",
+          "price": 3,
+          "quantity": 1,
+          "id": "d337d365-ceac-42cd-9046-0d4270796988",
+          "units": "1 kg",
+          "image": "green_kiwi.png"
+        },
+        {
+          "name": "Big Eggplant",
+          "price": 2,
+          "quantity": 1,
+          "id": "fcc9bb9e-8f3d-48a0-979d-53f35e425d2e",
+          "units": "1 kg",
+          "image": "big_eggplant.png"
+        }
+      ],
+      "id": "e78e23cb-55c2-4801-b308-0c8fcdc7239e",
+      "address": "JBR",
+      "customer_name": "undefined undefined",
+      "acceptedOn": "2021-04-10T21:00:33.300Z",
+      "cancelledOn": "2021-04-10T21:00:38.231Z"
+    },
+    {
+      "orderID": "16181257935189b24",
+      "orderTotal": 13.25,
+      "status": "created",
+      "userId": "f74728de-d41e-4f13-9b24-7e2a758eb303",
+      "createdOn": "2021-04-11T07:23:13.518Z",
+      "products": [
+        {
+          "name": "Green Kiwi",
+          "price": 3,
+          "quantity": 4,
+          "id": "d337d365-ceac-42cd-9046-0d4270796988",
+          "units": "1 kg",
+          "image": "green_kiwi.png"
+        },
+        {
+          "name": "Cucumber",
+          "price": 1.25,
+          "quantity": 1,
+          "id": "a18dd015-fd8b-4c9c-82ce-56eb8343e6ca",
+          "units": "1 kg",
+          "image": "cucumber.png"
+        }
+      ],
+      "id": "d524c1e1-6a66-46af-a84b-b92650bbea53",
+      "address": "JBR",
+      "customer_name": "undefined undefined"
+    }
+  ],
+  "products": [
+    {
+      "name": "Watermelon",
+      "category": "Fruits",
+      "quantity": 1,
+      "units": "pcs",
+      "price": 5,
+      "image": "watermelon.png",
+      "isActive": true,
+      "createdOn": "2021-03-28T10:08:35.657Z",
+      "id": "a01e6364-f4bf-499b-a848-dc27e4f82922"
+    },
+    {
+      "name": "Mango",
+      "category": "Fruits",
+      "quantity": 1,
+      "units": "kg",
+      "price": 5,
+      "image": "mango.png",
+      "isActive": true,
+      "createdOn": "2021-03-28T10:13:20.196Z",
+      "id": "87154922-48af-4941-a59b-4f32ca409223"
+    },
+    {
+      "name": "Pitaya",
+      "category": "Fruits",
+      "quantity": 1,
+      "units": "pcs",
+      "price": 5,
+      "image": "pitaya.png",
+      "isActive": true,
+      "createdOn": "2021-03-28T10:16:57.115Z",
+      "id": "b10f5aee-15ed-4e1e-9f2d-4d60fb6b314e"
+    },
+    {
+      "name": "Banana",
+      "category": "Fruits",
+      "quantity": 1,
+      "units": "kg",
+      "price": 10,
+      "image": "banana.png",
+      "isActive": true,
+      "createdOn": "2021-03-28T10:21:12.331Z",
+      "id": "720a64c8-a5c5-4038-9854-68ca88992093"
+    },
+    {
+      "name": "Pears",
+      "category": "Fruits",
+      "quantity": 1,
+      "units": "kg",
+      "price": 7,
+      "image": "pears.png",
+      "isActive": true,
+      "createdOn": "2021-03-28T10:22:22.729Z",
+      "id": "d28102f6-1c54-456d-b611-87c59b96ebad"
+    },
+    {
+      "name": "Pineapple",
+      "category": "Fruits",
+      "quantity": 1,
+      "units": "pcs",
+      "price": 2.5,
+      "image": "pineapple.png",
+      "isActive": true,
+      "createdOn": "2021-03-28T10:31:31.008Z",
+      "id": "8940d9bf-7fe4-491d-9149-b0d6171379ff"
+    },
+    {
+      "name": "Cabbage",
+      "category": "Vegetables",
+      "quantity": 1,
+      "units": "pcs",
+      "price": 3,
+      "image": "cabbage.png",
+      "isActive": true,
+      "createdOn": "2021-03-28T10:32:57.887Z",
+      "id": "a04dc02d-6130-44ee-b971-d3efe0aabff9"
+    },
+    {
+      "name": "Tomato",
+      "category": "Vegetables",
+      "quantity": 1,
+      "units": "kg",
+      "price": 2,
+      "image": "tomato.png",
+      "isActive": true,
+      "createdOn": "2021-03-28T10:37:10.953Z",
+      "id": "a41b752d-3611-4591-a70b-bfc717258170"
+    },
+    {
+      "name": "Green Marrow",
+      "category": "Vegetables",
+      "quantity": 1,
+      "units": "kg",
+      "price": 6,
+      "image": "green_marrow.png",
+      "isActive": true,
+      "createdOn": "2021-03-28T10:40:59.757Z",
+      "id": "c1a5df02-f69d-4ddb-b0f6-164acf1d5aba"
+    },
+    {
+      "name": "Lettuce",
+      "category": "Vegetables",
+      "quantity": 1,
+      "units": "pcs",
+      "price": 3,
+      "image": "lettuce.png",
+      "isActive": true,
+      "createdOn": "2021-03-28T10:45:32.363Z",
+      "id": "d6508b47-5ccd-47c7-b411-8be0ffe9413d"
+    },
+    {
+      "name": "Potatoes",
+      "category": "Vegetables",
+      "quantity": 1,
+      "units": "kg",
+      "price": 1.5,
+      "image": "potatoes.png",
+      "isActive": true,
+      "createdOn": "2021-03-28T10:53:20.014Z",
+      "id": "5ccec0a5-5f66-4e7e-b7d9-a83f5e6b99ea"
+    },
+    {
+      "name": "Carrots",
+      "category": "Vegetables",
+      "quantity": 1,
+      "units": "kg",
+      "price": 2.5,
+      "image": "carrots.png",
+      "isActive": true,
+      "createdOn": "2021-03-28T10:55:55.542Z",
+      "id": "786c76d0-12e1-48e0-aae6-bd27132adc1c"
+    },
+    {
+      "name": "Mint",
+      "category": "Greens",
+      "quantity": 1,
+      "units": "bunch",
+      "price": 0.5,
+      "image": "mint.png",
+      "isActive": true,
+      "createdOn": "2021-04-03T13:02:33.007Z",
+      "id": "65a835b8-70b7-4d8f-826d-382efb04a08f"
+    },
+    {
+      "name": "Arugula",
+      "category": "Greens",
+      "quantity": 1,
+      "units": "bunch",
+      "price": 0.25,
+      "image": "arugula.png",
+      "isActive": true,
+      "createdOn": "2021-04-03T13:07:44.343Z",
+      "id": "66a6a4a8-2cc8-4302-bd43-f37e2d7d6bd3"
+    },
+    {
+      "name": "Coriander",
+      "category": "Greens",
+      "quantity": 1,
+      "units": "bunch",
+      "price": 0.75,
+      "image": "coriander.png",
+      "isActive": true,
+      "createdOn": "2021-04-03T13:08:44.588Z",
+      "id": "5371977b-0fa7-4a21-aed2-52db9acb29f9"
+    },
+    {
+      "name": "Parsley",
+      "category": "Greens",
+      "quantity": 1,
+      "units": "bunch",
+      "price": 1,
+      "image": "parsley.png",
+      "isActive": true,
+      "createdOn": "2021-04-03T13:10:16.804Z",
+      "id": "5ac4a727-3657-4f0e-a83c-d46f06874e5c"
+    },
+    {
+      "name": "Green Kiwi",
+      "category": "Fruits",
+      "quantity": 1,
+      "units": "kg",
+      "price": 3,
+      "image": "green_kiwi.png",
+      "isActive": true,
+      "createdOn": "2021-04-03T13:26:21.555Z",
+      "id": "d337d365-ceac-42cd-9046-0d4270796988"
+    },
+    {
+      "name": "Big Eggplant",
+      "category": "Vegetables",
+      "quantity": 1,
+      "units": "kg",
+      "price": 2,
+      "image": "big_eggplant.png",
+      "isActive": true,
+      "createdOn": "2021-04-03T13:28:19.809Z",
+      "id": "fcc9bb9e-8f3d-48a0-979d-53f35e425d2e"
+    },
+    {
+      "name": "Cucumber",
+      "category": "Vegetables",
+      "quantity": 1,
+      "units": "kg",
+      "price": 1.25,
+      "image": "cucumber.png",
+      "isActive": true,
+      "createdOn": "2021-04-03T13:30:33.360Z",
+      "id": "a18dd015-fd8b-4c9c-82ce-56eb8343e6ca"
+    },
+    {
+      "name": "Mandarin",
+      "category": "Fruits",
+      "quantity": 1,
+      "units": "kg",
+      "price": 8,
+      "image": "mandarin_with_leaves.png",
+      "isActive": true,
+      "createdOn": "2021-04-03T13:31:55.699Z",
+      "id": "c0f88e83-b57c-4136-bfcd-1e7a2a25ed87"
+    }
+  ]
+}

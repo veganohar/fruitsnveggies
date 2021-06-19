@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fruits & Vegetables</title>
+    <!------FAVICON------>
+    <link rel="icon" type="image/png" href="../Images/favicon2.png" />
+    <!-----BOOTSTRAP----->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-----CSS------>
+    <link rel="stylesheet" href="../CSS Files/style.css">
+    <!-----JQUERY------>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/71f02e573d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Login modal -->
+    <div class="loader"></div>
+    <div class="alert alert-dismissible col-md-3 float-right" id="alertMsg">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+       <span></span> 
+      </div>
+    <div class="container-fluid login-cont bg-color1">
+        <div class="row main-content bg-success text-center">
+            <div class="col-md-4 text-center company__info">
+                <h3 style="color:#fff"> Fruits & Vegetables</h3>
+
+            </div>
+            <div class="col-md-8 col-xs-12 col-sm-12 login_form">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <h2 class="pt-3 text-center text-dark">Login</h2>
+                    </div>
+                    <div class="row justify-content-center">
+                        <form control="" class="form-group" novalidate autocomplete="off">
+                            <div class="row">
+                                <input type="text" name="username" id="username" class="form__input form-control"
+                                    placeholder="Username/Email" required>
+                                <div class="valid-feedback text-left">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback text-left">
+                                    Please provide a valid username/email.
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <input type="password" name="password" id="password" class="form__input form-control"
+                                    placeholder="Password" required>
+                                <div class="valid-feedback text-left">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback text-left">
+                                    Please provide a valid password.
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <input type="submit" value="Submit" class="login-btn">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Login Modal  -->
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <div class="styleLogo"> Fruits & Vegetables</div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span>
+                    <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../HTML Files/index1.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link d-none" href="../HTML Files/index1.html" id="logout">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar  -->
+
+    <!-- Page Content -->
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <svg class="bi bi-emoji-smile-upside-down" width="1em" height="1em" viewBox="0 0 16 16"
+                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0-1a8 8 0 1 1 0 16A8 8 0 0 1 8 0z" />
+                    <path fill-rule="evenodd"
+                        d="M4.285 6.433a.5.5 0 0 0 .683-.183A3.498 3.498 0 0 1 8 4.5c1.295 0 2.426.703 3.032 1.75a.5.5 0 0 0 .866-.5A4.498 4.498 0 0 0 8 3.5a4.5 4.5 0 0 0-3.898 2.25.5.5 0 0 0 .183.683z" />
+                    <path
+                        d="M7 9.5C7 8.672 6.552 8 6 8s-1 .672-1 1.5.448 1.5 1 1.5 1-.672 1-1.5zm4 0c0-.828-.448-1.5-1-1.5s-1 .672-1 1.5.448 1.5 1 1.5 1-.672 1-1.5z" />
+                </svg>
+                <h3>Welcome admin!</h3>
+            </div>
+
+            <ul class="list-unstyled components" id="prodSubmenu">
+                <li>
+                    <a href="#product-cont" id="productList">Product list</a>
+                </li>
+                <li>
+                    <a href="#createNewProduct" id="addNewProduct">Add new product</a>
+                </li>
+                <li>
+                    <a href="#orders-cont" id="ordersList">Orders</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main content -->
+        <div id="content" class="bg-color1">
+            <!-- Sidebar buttons -->
+            <button type="button" id="sidebarCollapse" class="btn btn-info float-left">
+                <svg class="bi bi-text-left" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </button>
+            <!-- Create New Product -->
+            <div class="row d-none product-create-container" id="createNewProduct">
+                <div class="col-10 order-md-1 pb-5">
+                    <h3 class="mb-3 pl-5 pt-5 pb-4 font-weight-bold">New Product</h3>
+                    <form class="needs-validation" autocomplete="off">
+                        <div class="row justify-content-center"><small id="emsg" class="text-danger"></small></div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="productTitle" class="font-weight-bold">Product title</label>
+                                <input type="text" class="form-control" id="productTitle" placeholder="Title"
+                                    required="">
+                                <div class="invalid-feedback"> Valid title is required. </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="productPrice" class="font-weight-bold">Price</label>
+                                <input type="number" class="form-control" id="productPrice" placeholder="0" required="">
+                                <div class="invalid-feedback"> Valid Price is required. </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="productQuantity" class="font-weight-bold">Quantity</label>
+                                <input type="number" class="form-control" id="productQuantity" placeholder="0"
+                                    required="">
+                                <div class="invalid-feedback"> Valid Quantity is required. </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="productUnits" class="font-weight-bold">Units</label>
+                                <select class="custom-select form-control" id="productUnits" required="">
+                                    <option value="" selected disabled>Select Units</option>
+                                    <option value="kg">Kg -- Kilograms </option>
+                                    <option value="bunch">Bunch -- Bunches</option>
+                                    <option value="pcs">Pc -- piece</option>
+                                </select>
+                                <div class="invalid-feedback"> Units is required. </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="productCategory" class="font-weight-bold">Category</label>
+                                <div class="d-block my-3 pb-3" id="cat-cont">
+                                    <div class="form-check-inline">
+                                        <input class="form-check-input" type="radio" id="vegetables" value="Vegetables"
+                                            name="productCategory">
+                                        <label class="form-check-label" for="vegetables">Vegetables</label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <input class="form-check-input" type="radio" id="fruits" value="Fruits"
+                                            name="productCategory">
+                                        <label class="form-check-label" for="fruits">Fruits</label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <input class="form-check-input" type="radio" id="greens" value="Greens"
+                                            name="productCategory">
+                                        <label class="form-check-label" for="greens">Greens</label>
+                                    </div>
+                                    <div class="d-none" id="invalid-cat"> Category is required. </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="productImage" class="font-weight-bold">Image</label>
+                                <br>
+                                <div class="btn btn-rounded waves-effect btn-sm"
+                                    style="border-radius: 10px;width: 100%;background: #ee675d">
+                                    <input class="text-white" type="file" accept="image/*" id="productImage">
+                                </div>
+                                <div class="d-none" id="invalid-img"> Image is required. </div>
+                            </div>
+                        </div>
+                        <div class="text-center"><img id="imgpreview" ></div>
+                        <hr class="mb-4">
+                        <div class="row justify-content-center">
+                            <button class="col-8 btn btn-primary btn-lg btn-block" type="submit"
+                                id="createProdBtn">Create Product</button>
+                            <button class="col-8 btn btn-primary btn-lg btn-block" type="submit" id="editProdBtn">Edit
+                                Product</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <!--End New Product-->
+
+            <!-- Product table -->
+            <div class="container product-table-container d-none" id="product-cont">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10 pt-4">
+                        <h4 class="text-center pb-3">Products</h4>
+                        <div class="table-responsive">
+                            <table class="table table-hover text-nowrap" id="product-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">S.No</th>
+                                        <th scope="col">Producnt Name</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Edit</th>
+                                        <th scope="col">Remove</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+            <div class="container orders-container d-none mt-3 mt-md-5" id="orders-cont">
+            </div>
+        </div>
+    </div>
+    <!-- End New Product -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-primary">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright © Fruits and Vegetables 2021</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- JAVASCRIPT file for admin page -->
+    <script src="../JavaScript Files/admin_script.js"></script>
+    <!-- BOOTSTRAP style for admin page  -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
